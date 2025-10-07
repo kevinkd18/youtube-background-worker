@@ -1,0 +1,13 @@
+services:
+  - type: worker
+    name: youtube-bot-worker
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: CHAT_ID
+        sync: false
+      - key: PYTHONUNBUFFERED
+        value: "1"
+    plan: free
